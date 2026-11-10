@@ -9,6 +9,20 @@ const facts = [
   ['GPA', '3.84 / 4.00'],
 ]
 
+const skills = [
+  ['Python', 'python.svg'],
+  ['R', 'r.svg'],
+  ['SQL', 'sql.svg'],
+  ['Amazon Web Services', 'aws.svg'],
+  ['Google Cloud Platform', 'gcp.svg'],
+  ['Databricks', 'databricks.svg'],
+  ['Power BI', 'powerbi.svg'],
+  ['Looker Studio', 'looker.svg'],
+  ['Cisco Packet Tracer', 'cisco.svg'],
+  ['Docker', 'docker.svg'],
+  ['React', 'react.svg'],
+]
+
 export default function About() {
   return (
     <section id="about" className="about">
@@ -47,6 +61,22 @@ export default function About() {
               ))}
             </dl>
           </div>
+        </div>
+
+        <div className="skills">
+          <h3 className="skills__title">
+            Skills <span className="hl">&amp; Tools</span>
+          </h3>
+          <ul className="skills__grid">
+            {skills.map(([name, file]) => (
+              <li key={name} className="skill">
+                <span className="skill__logo">
+                  <img src={`skills/${file}`} alt="" />
+                </span>
+                <span className="skill__name">{name}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
